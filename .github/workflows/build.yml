@@ -43,7 +43,7 @@ jobs:
             \~/.cargo/registry
             \~/.cargo/git
             evdev/src/main/rust/evdev_manager/target
-          key: \( {{ runner.os }}-gradle-rust- \){{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', '**/Cargo.lock') }}
+          key: \( {{ runner.os }}-gradle-rust- \){{ hashFiles('**/gradle-wrapper.properties') }}-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
             ${{ runner.os }}-gradle-rust-
 
